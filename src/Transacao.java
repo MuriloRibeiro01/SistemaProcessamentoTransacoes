@@ -1,6 +1,6 @@
 import java.time.LocalDateTime;
 
-public class Transacao {
+public abstract class Transacao {
     String nome;
     int idTransacao;
     public static int codigo = 0; //Criação de um contador simples (para ser um criador de ID de fato, deve haver local para armazenar o dado)
@@ -9,20 +9,15 @@ public class Transacao {
     java.time.LocalDateTime dataHora;
 
     public Transacao(double valorTransacao){
-        this.nome = nome;
         this.idTransacao = Transacao.codigo++;
         this.valorTransacao = valorTransacao;
         this.dataHora = LocalDateTime.now();
         this.status = "Pendente";
     }
 
-    public void Processar(){ //Método Abstrato
+    public abstract void Processar(); //Métodos abstratos NÃO TEM BLOCO DE CÓDIGO
 
-    }
-
-    public void exibirDetalhes(){ //Método Abstrato
-
-    }
+    public abstract void exibirDetalhes(); //Método Abstrato NÃO TEM BLOCO DE CÓDIGO
 
     public void getValor(){ //Retornar o valor da transação
         System.out.println("Valor da Transição: " + valorTransacao);

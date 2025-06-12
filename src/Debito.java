@@ -9,7 +9,6 @@ public class Debito extends Transacao{
 
     @Override
     public void Processar(){
-        super.Processar();
         if(valorTransacao > 1000.0){
             status = "Aprovada";
         } else {
@@ -21,12 +20,13 @@ public class Debito extends Transacao{
 
     @Override
     public void exibirDetalhes(){
-        super.exibirDetalhes();
-        System.out.println("ID da Transação: " + idTransacao);
-        System.out.println("Valor da Transação: " + valorTransacao);
-        System.out.println("Data da Transação: " + dataHora);
-        System.out.println("Status da Transação: " + status);
-        System.out.println("Origem da Transação: " + numeroCartao);
+        System.out.println("\n-------Detalhes-Débito-------");
+        System.out.println("ID da Transação: " + idTransacao + "\n");
+        System.out.println("Valor da Transação: " + valorTransacao + "\n");
+        System.out.println("Data da Transação: " + dataHora + "\n");
+        System.out.println("Status da Transação: " + status + "\n");
+        System.out.println("Origem da Transação: " + numeroCartao + "\n");
+        System.out.println("-----------------------------");
     }
 
 }
