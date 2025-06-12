@@ -1,15 +1,16 @@
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 public abstract class Transacao {
-    String nome;
-    int idTransacao;
+    protected String nome;
+    protected String idTransacao;
     public static int codigo = 0; //Criação de um contador simples (para ser um criador de ID de fato, deve haver local para armazenar o dado)
-    double valorTransacao;
-    String status; // Pendente; Paga; Rejeitada
-    java.time.LocalDateTime dataHora;
+    protected double valorTransacao;
+    protected String status; // Pendente; Paga; Rejeitada
+    protected java.time.LocalDateTime dataHora;
 
     public Transacao(double valorTransacao){
-        this.idTransacao = Transacao.codigo++;
+        this.idTransacao = UUID.randomUUID().toString();
         this.valorTransacao = valorTransacao;
         this.dataHora = LocalDateTime.now();
         this.status = "Pendente";
@@ -23,21 +24,20 @@ public abstract class Transacao {
         System.out.println("Valor da Transição: " + valorTransacao);
     }
 
-    public void getId(){ //Retorna o ID da transação
-        System.out.println("ID da Transição: " + idTransacao);
+    public String getId(){ //Retorna o ID da transação
+        return idTransacao;
     }
 
-    public void getStatus(){ //Retorna o Status da transação
-        System.out.println("Status: " + status);
+    public String getStatus(){ //Retorna o Status da transação
+        return status;
     }
 
-    public void getStatus(String status){ //Altera o Status da transação
-
+    public void setStatus(String status){ //Altera o Status da transação
+        this.status = status; // Atribui o valor do parâmetro ao atributo 'status' da instância
     }
 
-    public void getHora(){ //Retorna a data e horário da transação
-        System.out.println("Horário da Transição: " + dataHora);
+    public java.time.LocalDateTime getHora(){ //Retorna a data e horário da transação
+        return dataHora;
     }
-
 
 }

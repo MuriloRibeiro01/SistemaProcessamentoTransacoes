@@ -10,26 +10,31 @@ public class Credito extends Transacao{
     }
 
     @Override
-    public void Processar(){
-        if(valorTransacao > 5000.0 && parcelas < 12){
-            status = "Aprovada";
-        } else {
-            status = "Rejeitada";
-        }
-
-        System.out.println("Status da Transação: " + status);
+    public void exibirDetalhes(){
+        System.out.println("\n-------Detalhes-Crédito-------\n");
+        System.out.println("ID da Transação: " + getId() + "\n");
+        System.out.println("Valor da Transação: " + this.valorTransacao + "\n");
+        System.out.println("Número de Parcelas: " + this.parcelas + "\n");
+        System.out.println("Data da Transação: " + getHora() + "\n");
+        System.out.println("Status da Transação: " + getStatus() + "...\n");
+        System.out.println("Origem da Transação: " + this.numeroCartao + "\n");
     }
 
     @Override
-    public void exibirDetalhes(){
-        System.out.println("\n-------Detalhes-Crédito-------\n");
-        System.out.println("ID da Transação: " + idTransacao + "\n");
-        System.out.println("Valor da Transação: " + valorTransacao + "\n");
-        System.out.println("Número de Parcelas: " + parcelas + "\n");
-        System.out.println("Data da Transação: " + dataHora + "\n");
-        System.out.println("Status da Transação: " + status + "\n");
-        System.out.println("Origem da Transação: " + numeroCartao + "\n");
-        System.out.println("------------------------------");
-    }
+    public void Processar(){
+        if(this.valorTransacao > 5000.0 && parcelas <= 12){
+            setStatus("Aprovada");
+            System.out.println("\nTransação aprovada!\n");
+        } else if(parcelas > 12){
+            setStatus("Rejeitada");
+            System.out.println("\nTransação rejeitada dada a quantidade superior de parcelas.\n");
+        } else if(this.valorTransacao < 5000.0){
+            setStatus("Rejeitada");
+            System.out.println("\nTransação rejeitada dado ao valor inferior ao requerido.\n");
+        } else {
+            System.out.println("\nErro.\n");
+        }   
+
+    }    
 
 }

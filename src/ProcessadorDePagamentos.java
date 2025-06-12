@@ -12,7 +12,23 @@ public class ProcessadorDePagamentos {
         
         for(Transacao transacao : transacoesGerais){ // Aqui a variável "transacao" é TEMPORÁRIA e será reutilizada em cada iteração do loop
             transacao.exibirDetalhes();
+            transacao.Processar();
+            System.out.println("-------------------------");
         };
+
+        int contadorAprovadas = 0;
+        int contadorRejeitadas = 0;
+
+        for(Transacao t : transacoesGerais){
+            if(t.getStatus().equals("Aprovada")){
+                contadorAprovadas++;
+            }else if(t.getStatus().equals("Rejeitada")){
+                contadorRejeitadas++;
+            }
+        }
+
+        System.out.println("Transações Aprovadas: " + contadorAprovadas);
+        System.out.println("Transações Rejeitadas: " + contadorRejeitadas);
 
     }
 }
