@@ -26,11 +26,11 @@ Para compilar e rodar este sistema em sua máquina, siga os passos abaixo:
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [LINK_DO_SEU_REPOSITORIO_AQUI]
+    git clone https://github.com/MuriloRibeiro01/SistemaProcessamentoTransacoes/tree/master
     ```
 2.  **Navegue até o diretório do projeto:**
     ```bash
-    cd nome-do-seu-repositorio
+    cd SistemaProcessamentoTransacoes
     ```
 3.  **Compile todos os arquivos `.java`:**
     ```bash
@@ -39,7 +39,7 @@ Para compilar e rodar este sistema em sua máquina, siga os passos abaixo:
     *(Ajuste os nomes dos arquivos `.java` conforme os nomes exatos das suas classes, especialmente a que contém o método `main`.)*
 4.  **Execute a classe principal:**
     ```bash
-    java ProcessadorDePagamentos # Ou o nome da sua classe principal
+    java ProcessadorDePagamentos 
     ```
 
 O programa iniciará um menu interativo no console, onde você poderá adicionar, processar e visualizar as transações.
@@ -53,7 +53,8 @@ Estou animado(a) para continuar explorando o universo da POO e construir soluç�
 ---
 
 **Autor:**
-[Seu Nome Completo]
-[Link para seu LinkedIn (Opcional)]
+Murilo Ribeiro da Silveira
+
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=plastic&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/murilo-ribeiro-da-silveira-255774264)
 
 ---
