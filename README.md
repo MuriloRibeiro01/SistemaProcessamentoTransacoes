@@ -48,7 +48,7 @@ O programa iniciará um menu interativo no console, onde você poderá adicionar
 
 Este projeto reforça a importância da modelagem orientada a objetos para criar software modular, flexível e de fácil manutenção. A aplicação prática de herança e polimorfismo em um cenário real de transações financeiras solidificou meu entendimento sobre como Java permite gerenciar objetos diversos de forma unificada e poderosa.
 
-Estou animado(a) para continuar explorando o universo da POO e construir soluções cada vez mais robustas!
+Estou animado para continuar explorando o universo da POO e construir soluções cada vez mais robustas!
 
 ---
 
